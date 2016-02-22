@@ -43,9 +43,9 @@ def word_counter():
     from sklearn.feature_extraction.text import TfidfTransformer
     from sklearn.naive_bayes import MultinomialNB
     
-    clf2 = pickle.load(open( "mornApp/data/my_model.pkl", "rb" ) )
-    count_vect2 = pickle.load(open( "mornApp/data/my_vectorizer.pkl", "rb" ) )
-    tfidf_transformer2 = pickle.load(open ( "mornApp/data/my_transformer.pkl", "rb" ))
+    clf2 = pickle.load(open( "data/my_model.pkl", "rb" ) )
+    count_vect2 = pickle.load(open( "data/my_vectorizer.pkl", "rb" ) )
+    tfidf_transformer2 = pickle.load(open ( "data/my_transformer.pkl", "rb" ))
 
     #process new data
     X_new_counts = count_vect2.transform(data)
@@ -59,4 +59,4 @@ def word_counter():
         return render_template('template2.html', doc=doc, category=categories[category])
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8087, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

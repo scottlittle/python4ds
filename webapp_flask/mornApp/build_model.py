@@ -22,14 +22,14 @@ clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 
 import pickle
 #vectorizer_pickle = pickle.dumps(count_vect)
-pickle.dump(count_vect, open( "mornApp/data/my_vectorizer.pkl", "wb" ))
+pickle.dump(count_vect, open( "data/my_vectorizer.pkl", "wb" ))
 #model_pickle = pickle.dumps(clf)
-pickle.dump(clf, open( "mornApp/data/my_model.pkl", "wb" ))
-pickle.dump(tfidf_transformer, open( "mornApp/data/my_transformer.pkl", "wb" ))
+pickle.dump(clf, open( "data/my_model.pkl", "wb" ))
+pickle.dump(tfidf_transformer, open( "data/my_transformer.pkl", "wb" ))
 #clf2 = pickle.loads(model_pickle)
-clf2 = pickle.load(open( "mornApp/data/my_model.pkl", "rb" ) )
+clf2 = pickle.load(open( "data/my_model.pkl", "rb" ) )
 #count_vect2 = pickle.loads(vectorizer_pickle)
-count_vect2 = pickle.load(open( "mornApp/data/my_vectorizer.pkl", "rb" ) )
+count_vect2 = pickle.load(open( "data/my_vectorizer.pkl", "rb" ) )
 
 docs_new = ['God is love', 'OpenGL on the GPU is fast']
 X_new_counts = count_vect2.transform(docs_new)
